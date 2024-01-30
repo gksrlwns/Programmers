@@ -5,9 +5,8 @@ public class Solution {
         int n2 = 1;
         for(int i = 2; i <= n; i++)
         {
-            answer = n1 + n2;
-            if(answer > 1234567)
-                answer%=1234567;
+            answer = (n1 + n2)%1234567;
+            
             n1 = n2;
             n2 = answer;
         }
