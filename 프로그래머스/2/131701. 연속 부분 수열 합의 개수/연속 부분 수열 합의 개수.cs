@@ -12,7 +12,11 @@ public class Solution {
             for (int i = 0; i < length; i++)
             {
                 int sum = 0;
-
+                if(count == length)
+                {
+                    list.Add(elements.Sum());
+                    break;
+                }
                 for(int j = 0; j < count; j++)
                 {
                     if ((i + j) >= length)
@@ -29,7 +33,6 @@ public class Solution {
             }
             count++;
         }
-        Console.WriteLine();
         list = list.Distinct().ToList();
         answer = list.Count();
         return answer;
