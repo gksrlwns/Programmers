@@ -23,9 +23,9 @@ public class Solution {
         
         Stack<char> stack = new Stack<char>();
         
-        for(int i = 0; i < list.Count; i++)
+        foreach(char i in list)
         {
-            switch(list[i])
+            switch(i)
             {
                 case ')':
                     if(stack.Count == 0 || stack.Pop() != '(' ) return false;
@@ -37,7 +37,7 @@ public class Solution {
                     if(stack.Count == 0 || stack.Pop() != '{' ) return false;
                     break;
                 default :
-                    stack.Push(list[i]);
+                    stack.Push(i);
                     break;
             }
         }
