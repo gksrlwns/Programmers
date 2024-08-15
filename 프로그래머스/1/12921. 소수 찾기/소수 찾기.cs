@@ -1,19 +1,24 @@
 public class Solution {
     public int solution(int n) {
-        int answer = 0;
-        bool[] isBools = new bool[n+1];
-        
-        for(int i = 2; i <= n; i++)
+        int answer = n-1;
+        bool[] arr = new bool[n+1];
+        for(int i=2; i*i <= n; i++)
         {
-            if(isBools[i] == false)
+            if(arr[i] == true) 
             {
-                answer ++;
-                for(int j = i * 2 ; j > 1 && j <= n; j+= i)
+                continue;
+            }
+            for(int j = i*i; j <= n ; j+=i)
+            {
+                if(arr[j] == true) 
                 {
-                    isBools[j] = true;
+                    continue;
                 }
+                arr[j] = true;
+                answer--;
             }
         }
+        
         return answer;
     }
     
